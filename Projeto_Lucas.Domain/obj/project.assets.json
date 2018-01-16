@@ -673,11 +673,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\usuario\\Desktop\\Lucas\\Projeto_Lucas_Core\\Projeto_Lucas.Domain\\Projeto_Lucas.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\usuario\\Desktop\\Lucas\\Lucas_Projeto_Core_Angular4\\Projeto_Lucas.Domain\\Projeto_Lucas.Domain.csproj",
       "projectName": "Projeto_Lucas.Domain",
-      "projectPath": "C:\\Users\\usuario\\Desktop\\Lucas\\Projeto_Lucas_Core\\Projeto_Lucas.Domain\\Projeto_Lucas.Domain.csproj",
+      "projectPath": "C:\\Users\\usuario\\Desktop\\Lucas\\Lucas_Projeto_Core_Angular4\\Projeto_Lucas.Domain\\Projeto_Lucas.Domain.csproj",
       "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\usuario\\Desktop\\Lucas\\Projeto_Lucas_Core\\Projeto_Lucas.Domain\\obj\\",
+      "outputPath": "C:\\Users\\usuario\\Desktop\\Lucas\\Lucas_Projeto_Core_Angular4\\Projeto_Lucas.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

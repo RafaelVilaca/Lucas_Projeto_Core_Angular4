@@ -4029,11 +4029,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\usuario\\Desktop\\Lucas\\Projeto_Lucas_Core\\Projeto_Lucas.Infrastructure\\Projeto_Lucas.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\usuario\\Desktop\\Lucas\\Lucas_Projeto_Core_Angular4\\Projeto_Lucas.Infrastructure\\Projeto_Lucas.Infrastructure.csproj",
       "projectName": "Projeto_Lucas.Infrastructure",
-      "projectPath": "C:\\Users\\usuario\\Desktop\\Lucas\\Projeto_Lucas_Core\\Projeto_Lucas.Infrastructure\\Projeto_Lucas.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\usuario\\Desktop\\Lucas\\Lucas_Projeto_Core_Angular4\\Projeto_Lucas.Infrastructure\\Projeto_Lucas.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\usuario\\Desktop\\Lucas\\Projeto_Lucas_Core\\Projeto_Lucas.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\usuario\\Desktop\\Lucas\\Lucas_Projeto_Core_Angular4\\Projeto_Lucas.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -4052,8 +4052,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\usuario\\Desktop\\Lucas\\Projeto_Lucas_Core\\Projeto_Lucas.Domain\\Projeto_Lucas.Domain.csproj": {
-              "projectPath": "C:\\Users\\usuario\\Desktop\\Lucas\\Projeto_Lucas_Core\\Projeto_Lucas.Domain\\Projeto_Lucas.Domain.csproj"
+            "C:\\Users\\usuario\\Desktop\\Lucas\\Lucas_Projeto_Core_Angular4\\Projeto_Lucas.Domain\\Projeto_Lucas.Domain.csproj": {
+              "projectPath": "C:\\Users\\usuario\\Desktop\\Lucas\\Lucas_Projeto_Core_Angular4\\Projeto_Lucas.Domain\\Projeto_Lucas.Domain.csproj"
             }
           }
         }

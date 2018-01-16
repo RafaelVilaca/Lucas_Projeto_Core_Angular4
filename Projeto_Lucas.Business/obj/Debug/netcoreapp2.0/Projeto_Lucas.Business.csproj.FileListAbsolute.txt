@@ -9,3 +9,14 @@ C:\Users\usuario\Desktop\Lucas\Projeto_Lucas_Core\Projeto_Lucas.Business\obj\Deb
 C:\Users\usuario\Desktop\Lucas\Projeto_Lucas_Core\Projeto_Lucas.Business\obj\Debug\netcoreapp2.0\Projeto_Lucas.Business.AssemblyInfo.cs
 C:\Users\usuario\Desktop\Lucas\Projeto_Lucas_Core\Projeto_Lucas.Business\obj\Debug\netcoreapp2.0\Projeto_Lucas.Business.dll
 C:\Users\usuario\Desktop\Lucas\Projeto_Lucas_Core\Projeto_Lucas.Business\obj\Debug\netcoreapp2.0\Projeto_Lucas.Business.pdb
+C:\Users\usuario\Desktop\Lucas\Lucas_Projeto_Core_Angular4\Projeto_Lucas.Business\bin\Debug\netcoreapp2.0\Projeto_Lucas.Business.deps.json
+C:\Users\usuario\Desktop\Lucas\Lucas_Projeto_Core_Angular4\Projeto_Lucas.Business\bin\Debug\netcoreapp2.0\Projeto_Lucas.Business.dll
+C:\Users\usuario\Desktop\Lucas\Lucas_Projeto_Core_Angular4\Projeto_Lucas.Business\bin\Debug\netcoreapp2.0\Projeto_Lucas.Business.pdb
+C:\Users\usuario\Desktop\Lucas\Lucas_Projeto_Core_Angular4\Projeto_Lucas.Business\bin\Debug\netcoreapp2.0\Projeto_Lucas.Domain.dll
+C:\Users\usuario\Desktop\Lucas\Lucas_Projeto_Core_Angular4\Projeto_Lucas.Business\bin\Debug\netcoreapp2.0\Projeto_Lucas.Domain.pdb
+C:\Users\usuario\Desktop\Lucas\Lucas_Projeto_Core_Angular4\Projeto_Lucas.Business\obj\Debug\netcoreapp2.0\Projeto_Lucas.Business.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Desktop\Lucas\Lucas_Projeto_Core_Angular4\Projeto_Lucas.Business\obj\Debug\netcoreapp2.0\Projeto_Lucas.Business.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\Lucas\Lucas_Projeto_Core_Angular4\Projeto_Lucas.Business\obj\Debug\netcoreapp2.0\Projeto_Lucas.Business.AssemblyInfoInputs.cache
+C:\Users\usuario\Desktop\Lucas\Lucas_Projeto_Core_Angular4\Projeto_Lucas.Business\obj\Debug\netcoreapp2.0\Projeto_Lucas.Business.AssemblyInfo.cs
+C:\Users\usuario\Desktop\Lucas\Lucas_Projeto_Core_Angular4\Projeto_Lucas.Business\obj\Debug\netcoreapp2.0\Projeto_Lucas.Business.dll
+C:\Users\usuario\Desktop\Lucas\Lucas_Projeto_Core_Angular4\Projeto_Lucas.Business\obj\Debug\netcoreapp2.0\Projeto_Lucas.Business.pdb

@@ -4,7 +4,7 @@
 <p *ngIf="!produtos"><em>Loading Produtos please Wait ! ...</em></p>
 
 <table class='table' id="tblContainer" *ngIf="produtos">
-    <tr *ngIf="AddProdutoTable">
+    <!--<tr *ngIf="AddProdutoTable">
         <td>
             <table>
                 <tr>
@@ -47,7 +47,7 @@
                                         <tr>
                                             <td width="20">&nbsp;</td>
                                             <td><b>Ativo:</b></td>
-                                            <td width="20">&nbsp;</td>                                            
+                                            <td width="20">&nbsp;</td>
                                             <td class="form-check-inline">
                                                 <input class="form-check-input" type="checkbox" (click)="changeStatus()" [(ngModel)]="Ativos" >
                                             </td>
@@ -57,7 +57,7 @@
                                             <td width="20">&nbsp;</td>
                                             <td class="form-check-inline">
                                                 <input class="form-check-input" #Ativo type="radio" name="Ativo" value="false" (ngModel)="Ativos">
-                                            </td>-->
+                                            </td>--!>
 
                                             <td width="20">&nbsp;</td>
                                             <td><b>Cadastro:</b></td>
@@ -99,52 +99,55 @@
     </tr>
     <tr>
         <td>
-            <table class='table' id="tblContainer">
-                <thead>
-                    <tr>
-                        <td>
-                            <button icon="fa-plus" style="float:left" class="btn btn-primary" 
-                                    data-toggle="tooltip" data-placement="top" title="NOVO PRODUTO" (click)="AddProduto()">
-                                <span class='glyphicon glyphicon-th-list'></span>
-                            </button>
-                            <!--&nbsp;&nbsp;&nbsp;
-                            <button class="btn btn-primary" (click)="refresh()"><span class='glyphicon glyphicon-refresh'></span> Refresh</button>-->
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Status</th>
-                        <th>Titulo</th>
-                        <th>Valor</th>
-                        <th>Data Cadastro</th>
-                        <th style="text-align:center">Acoes</th>
-                    </tr>
-                    <tr *ngIf="!produtos" style="color: red;"><td colspan="12" style="text-align:center;">
-                        <b>Nenhum produto encontrado!!</b></td></tr>
-                </thead>
-                <tbody *ngIf="!!produtos">
-                    <tr *ngFor="let produto of produtos">
-                        <td *ngIf="!produto.ativo">
-                            <h6 style="color:#f00">INATIVO</h6>
-                        </td>
-                        <td *ngIf="!!produto.ativo">
-                            <h6 style="color:green">ATIVO</h6>
-                        </td>
-                        <td>{{ produto.titulo }}</td>
-                        <td>{{ produto.valor }}</td>
-                        <td>{{ produto.dataCadastro | date:"dd-MMMM-yyyy" }}</td>
-                        <td align="center">
-                            <button class="btn btn-warning btn-sm" style="border-radius:40px;"  data-toggle="tooltip" data-placement="top" title="EDITAR"
-                                    (click)="UpdateProduto(produto.id, produto.ativo, produto.titulo, produto.valor, produto.dataCadastro)">
-                                <span class='glyphicon glyphicon-edit'></span>
-                            </button>
-                            <button class="btn btn-danger btn-sm" style="border-radius:40px;" 
-                                    (click)="ngDeleteProduto(produto.id)" data-toggle="tooltip" data-placement="top" title="DELETAR">
-                                <span class='glyphicon glyphicon-erase'></span>
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <table class='table' id="tblContainer">-->
+    <thead>
+        <tr>
+            <td>
+                <button icon="fa-plus" style="float:left" class="btn btn-primary" routerLink="/produto-editar" routerLinkActive="active"
+                        data-toggle="tooltip" data-placement="top" title="NOVO PRODUTO" (click)="AddProduto()">
+                    <span class='glyphicon glyphicon-th-list'></span>
+                </button>
+                <!--&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-primary" (click)="refresh()"><span class='glyphicon glyphicon-refresh'></span> Refresh</button>-->
+            </td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <th>Titulo</th>
+            <th>Valor</th>
+            <th>Data Cadastro</th>
+            <th style="text-align:center">Acoes</th>
+        </tr>
+        <tr *ngIf="!produtos" style="color: red;">
+            <td colspan="12" style="text-align:center;">
+                <b>Nenhum produto encontrado!!</b>
+            </td>
+        </tr>
+    </thead>
+    <tbody *ngIf="!!produtos">
+        <tr *ngFor="let produto of produtos">
+            <td *ngIf="!produto.ativo">
+                <h6 style="color:#f00">INATIVO</h6>
+            </td>
+            <td *ngIf="!!produto.ativo">
+                <h6 style="color:green">ATIVO</h6>
+            </td>
+            <td>{{ produto.titulo }}</td>
+            <td>{{ produto.valor | currency:'BRL':true }}</td>
+            <td>{{ produto.dataCadastro | date:"dd-MMMM-yyyy" }}</td>
+            <td align="center">
+                <button class="btn btn-warning btn-sm" style="border-radius:40px;" data-toggle="tooltip" data-placement="top" title="EDITAR"
+                        (click)="UpdateProduto(produto.id, produto.ativo, produto.titulo, produto.valor, produto.dataCadastro)">
+                    <span class='glyphicon glyphicon-edit'></span>
+                </button>
+                <button class="btn btn-danger btn-sm" style="border-radius:40px;"
+                        (click)="ngDeleteProduto(produto.id)" data-toggle="tooltip" data-placement="top" title="DELETAR">
+                    <span class='glyphicon glyphicon-erase'></span>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+    <!--</table>
         </td>
-    </tr>
+    </tr>-->
 </table>

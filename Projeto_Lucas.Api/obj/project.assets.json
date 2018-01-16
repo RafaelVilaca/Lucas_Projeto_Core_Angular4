@@ -13271,11 +13271,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\usuario\\Desktop\\Lucas\\Projeto_Lucas_Core\\Projeto_Lucas.Api\\Projeto_Lucas.Api.csproj",
+      "projectUniqueName": "C:\\Users\\usuario\\Desktop\\Lucas\\Lucas_Projeto_Core_Angular4\\Projeto_Lucas.Api\\Projeto_Lucas.Api.csproj",
       "projectName": "Projeto_Lucas.Api",
-      "projectPath": "C:\\Users\\usuario\\Desktop\\Lucas\\Projeto_Lucas_Core\\Projeto_Lucas.Api\\Projeto_Lucas.Api.csproj",
+      "projectPath": "C:\\Users\\usuario\\Desktop\\Lucas\\Lucas_Projeto_Core_Angular4\\Projeto_Lucas.Api\\Projeto_Lucas.Api.csproj",
       "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\usuario\\Desktop\\Lucas\\Projeto_Lucas_Core\\Projeto_Lucas.Api\\obj\\",
+      "outputPath": "C:\\Users\\usuario\\Desktop\\Lucas\\Lucas_Projeto_Core_Angular4\\Projeto_Lucas.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13294,14 +13294,14 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\usuario\\Desktop\\Lucas\\Projeto_Lucas_Core\\Projeto_Lucas.Domain\\Projeto_Lucas.Domain.csproj": {
-              "projectPath": "C:\\Users\\usuario\\Desktop\\Lucas\\Projeto_Lucas_Core\\Projeto_Lucas.Domain\\Projeto_Lucas.Domain.csproj"
+            "C:\\Users\\usuario\\Desktop\\Lucas\\Lucas_Projeto_Core_Angular4\\Projeto_Lucas.Domain\\Projeto_Lucas.Domain.csproj": {
+              "projectPath": "C:\\Users\\usuario\\Desktop\\Lucas\\Lucas_Projeto_Core_Angular4\\Projeto_Lucas.Domain\\Projeto_Lucas.Domain.csproj"
             },
-            "C:\\Users\\usuario\\Desktop\\Lucas\\Projeto_Lucas_Core\\Projeto_Lucas.Business\\Projeto_Lucas.Business.csproj": {
-              "projectPath": "C:\\Users\\usuario\\Desktop\\Lucas\\Projeto_Lucas_Core\\Projeto_Lucas.Business\\Projeto_Lucas.Business.csproj"
+            "C:\\Users\\usuario\\Desktop\\Lucas\\Lucas_Projeto_Core_Angular4\\Projeto_Lucas.Business\\Projeto_Lucas.Business.csproj": {
+              "projectPath": "C:\\Users\\usuario\\Desktop\\Lucas\\Lucas_Projeto_Core_Angular4\\Projeto_Lucas.Business\\Projeto_Lucas.Business.csproj"
             },
-            "C:\\Users\\usuario\\Desktop\\Lucas\\Projeto_Lucas_Core\\Projeto_Lucas.Infrastructure\\Projeto_Lucas.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\usuario\\Desktop\\Lucas\\Projeto_Lucas_Core\\Projeto_Lucas.Infrastructure\\Projeto_Lucas.Infrastructure.csproj"
+            "C:\\Users\\usuario\\Desktop\\Lucas\\Lucas_Projeto_Core_Angular4\\Projeto_Lucas.Infrastructure\\Projeto_Lucas.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\usuario\\Desktop\\Lucas\\Lucas_Projeto_Core_Angular4\\Projeto_Lucas.Infrastructure\\Projeto_Lucas.Infrastructure.csproj"
             }
           }
         }

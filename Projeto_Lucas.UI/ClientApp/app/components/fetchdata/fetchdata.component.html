@@ -2,14 +2,14 @@
 
 <hr style="height: 1px;color: #123455;background-color: #d55500;border: none;color: #d55500;" />
 <p *ngIf="!clientes"><em>Loading Clientes please Wait ! ...</em></p>
-<nav>
+<!--<nav>
     <a routerLink="/cliente-editar" routerLinkActive="active">Add</a>
 </nav>
 <button routerLink="/cliente-editar" routerLinkActive="active" (click)="AddCliente()">
     <router-outlet>router-outlet</router-outlet>
-</button>
+</button>-->
 <table class='table' id="tblContainer" *ngIf="clientes">
-    <tr *ngIf="AddClienteTable">
+    <!--<tr *ngIf="AddClienteTable">
         <td>
             <table>
                 <tr>
@@ -63,7 +63,7 @@
                                             <td>
                                                 <input style="width: 250px;text-align:center;" type="text" (ngModel)="Nascimentos" class="form-control"
                                                        #Nascimento value="{{ Nascimentos | date:'dd/MM/yyyy' }}" [textMask]="{mask: maskDate}">
-                                                <!--<mat-datepicker #myDatepicker></mat-datepicker>-->
+                                                <!--<mat-datepicker #myDatepicker></mat-datepicker>--!>
                                             </td>
                                             <td width="20">&nbsp;</td>
 
@@ -119,63 +119,63 @@
                 </tr>
             </table>
         </td>
-    </tr>
-    <tr>
-        <td>
-            <table class='table' id="tblContainer">
-                <thead>
-                    <tr>
-                        <td>
-                            <button icon="fa-plus" style="float:left" class="btn btn-primary"
-                                    (click)="AddCliente()" data-toggle="tooltip" data-placement="top" title="NOVO CLIENTE">
-                                <span class='glyphicon glyphicon-th-list'></span>
-                            </button>
-                        </td>
-                    </tr>
+    </tr>-->
+    <!--<tr>
+        <td>-->
+    <!--<table class='table' id="tblContainer">-->
+    <thead>
+        <tr>
+            <td>
+                <button icon="fa-plus" style="float:left" class="btn btn-primary" routerLink="/cliente-editar" routerLinkActive="active"
+                         data-toggle="tooltip" data-placement="top" title="NOVO CLIENTE">
+                    <span class='glyphicon glyphicon-th-list'></span>
+                </button>
+            </td>
+        </tr>
 
-                    <tr>
-                        <th>Status</th>
-                        <th>Nome</th>
-                        <th>Email</th>
-                        <th>Nascimento</th>
-                        <th>Endereco</th>
-                        <th>Data Cadastro</th>
-                        <th style="text-align:center">Acoes</th>
-                    </tr>
+        <tr>
+            <th>Status</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Nascimento</th>
+            <th>Endereco</th>
+            <th>Data Cadastro</th>
+            <th style="text-align:center">Acoes</th>
+        </tr>
 
-                    <tr *ngIf="!clientes" style="color: red;">
-                        <td colspan="12" style="text-align:center;">
-                            <b>Nenhum cliente encontrado!!</b>
-                        </td>
-                    </tr>
-                </thead>
-                <tbody *ngIf="!!clientes">
-                    <tr *ngFor="let cliente of clientes">
-                        <td *ngIf="!cliente.ativo">
-                            <h6 style="color:#f00">INATIVO</h6>
-                        </td>
-                        <td *ngIf="!!cliente.ativo">
-                            <h6 style="color:green">ATIVO</h6>
-                        </td>
-                        <td>{{ cliente.nome }}</td>
-                        <td>{{ cliente.email }}</td>
-                        <td>{{ cliente.nascimento | date:"dd-MM-yyyy" }}</td>
-                        <td>{{ cliente.endereco }}</td>
-                        <td>{{ cliente.dataCadastro | date:"dd-MM-yyyy" }}</td>
-                        <td align="center">
-                            <button class="btn btn-warning btn-sm" style="border-radius:40px;" data-toggle="tooltip" data-placement="top" title="EDITAR"
-                                    (click)="UpdateCliente(cliente.id,cliente.nome,cliente.email,cliente.nascimento,cliente.dataCadastro,cliente.cpf,cliente.endereco,cliente.ativo)">
-                                <span class='glyphicon glyphicon-edit'></span>
-                            </button>
-                            <button class="btn btn-danger btn-sm" style="border-radius:40px;"
-                                    (click)="ngDeleteCliente(cliente.id)" data-toggle="tooltip" data-placement="top" title="DELETAR">
-                                <span class='glyphicon glyphicon-erase'></span>
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </td>
-    </tr>
+        <tr *ngIf="!clientes" style="color: red;">
+            <td colspan="12" style="text-align:center;">
+                <b>Nenhum cliente encontrado!!</b>
+            </td>
+        </tr>
+    </thead>
+    <tbody *ngIf="!!clientes">
+        <tr *ngFor="let cliente of clientes">
+            <td *ngIf="!cliente.ativo">
+                <h6 style="color:#f00">INATIVO</h6>
+            </td>
+            <td *ngIf="!!cliente.ativo">
+                <h6 style="color:green">ATIVO</h6>
+            </td>
+            <td>{{ cliente.nome }}</td>
+            <td>{{ cliente.email }}</td>
+            <td>{{ cliente.nascimento | date:"dd-MM-yyyy" }}</td>
+            <td>{{ cliente.endereco }}</td>
+            <td>{{ cliente.dataCadastro | date:"dd-MM-yyyy" }}</td>
+            <td align="center">
+                <button class="btn btn-warning btn-sm" style="border-radius:40px;" data-toggle="tooltip" data-placement="top" title="EDITAR"
+                        (click)="UpdateCliente(cliente.id,cliente.nome,cliente.email,cliente.nascimento,cliente.dataCadastro,cliente.cpf,cliente.endereco,cliente.ativo)">
+                    <span class='glyphicon glyphicon-edit'></span>
+                </button>
+                <button class="btn btn-danger btn-sm" style="border-radius:40px;"
+                        (click)="ngDeleteCliente(cliente.id)" data-toggle="tooltip" data-placement="top" title="DELETAR">
+                    <span class='glyphicon glyphicon-erase'></span>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+    <!--</table>-->
+    <!--</td>
+    </tr>-->
 </table>
 

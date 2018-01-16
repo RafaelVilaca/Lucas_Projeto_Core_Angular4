@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { ClienteEditarComponent } from './components/fetchdata/clienteeditar.component';
+import { ProdutoEditarComponent } from './components/counter/produtoeditar.component';
 
 import { TextMaskModule } from '../src/angularTextMask';
 
@@ -20,7 +21,8 @@ import { TextMaskModule } from '../src/angularTextMask';
         CounterComponent,
         FetchDataComponent,
         HomeComponent,
-        ClienteEditarComponent
+        ClienteEditarComponent,
+        ProdutoEditarComponent
     ],
     imports: [
         CommonModule,
@@ -33,6 +35,7 @@ import { TextMaskModule } from '../src/angularTextMask';
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
             { path: 'cliente-editar', component: ClienteEditarComponent },
+            { path: 'produto-editar', component: ProdutoEditarComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]
