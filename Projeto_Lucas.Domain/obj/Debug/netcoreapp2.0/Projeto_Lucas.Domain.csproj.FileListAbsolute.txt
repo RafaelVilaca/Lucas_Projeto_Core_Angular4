@@ -1,0 +1,9 @@
+C:\Users\usuario\Desktop\Lucas\Projeto_Lucas_Core\Projeto_Lucas.Domain\bin\Debug\netcoreapp2.0\Projeto_Lucas.Domain.deps.json
+C:\Users\usuario\Desktop\Lucas\Projeto_Lucas_Core\Projeto_Lucas.Domain\bin\Debug\netcoreapp2.0\Projeto_Lucas.Domain.dll
+C:\Users\usuario\Desktop\Lucas\Projeto_Lucas_Core\Projeto_Lucas.Domain\bin\Debug\netcoreapp2.0\Projeto_Lucas.Domain.pdb
+C:\Users\usuario\Desktop\Lucas\Projeto_Lucas_Core\Projeto_Lucas.Domain\obj\Debug\netcoreapp2.0\Projeto_Lucas.Domain.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Desktop\Lucas\Projeto_Lucas_Core\Projeto_Lucas.Domain\obj\Debug\netcoreapp2.0\Projeto_Lucas.Domain.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\Lucas\Projeto_Lucas_Core\Projeto_Lucas.Domain\obj\Debug\netcoreapp2.0\Projeto_Lucas.Domain.AssemblyInfoInputs.cache
+C:\Users\usuario\Desktop\Lucas\Projeto_Lucas_Core\Projeto_Lucas.Domain\obj\Debug\netcoreapp2.0\Projeto_Lucas.Domain.AssemblyInfo.cs
+C:\Users\usuario\Desktop\Lucas\Projeto_Lucas_Core\Projeto_Lucas.Domain\obj\Debug\netcoreapp2.0\Projeto_Lucas.Domain.dll
+C:\Users\usuario\Desktop\Lucas\Projeto_Lucas_Core\Projeto_Lucas.Domain\obj\Debug\netcoreapp2.0\Projeto_Lucas.Domain.pdb

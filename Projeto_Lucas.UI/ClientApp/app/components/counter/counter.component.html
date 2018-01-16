@@ -1,0 +1,150 @@
+<h1>Produtos</h1>
+
+<hr style="height: 1px;color: #123455;background-color: #d55500;border: none;color: #d55500;" />
+<p *ngIf="!produtos"><em>Loading Produtos please Wait ! ...</em></p>
+
+<table class='table' id="tblContainer" *ngIf="produtos">
+    <tr *ngIf="AddProdutoTable">
+        <td>
+            <table>
+                <tr>
+                    <td>
+                        <table style="background-color:#FFFFFF; border: 3px #6D7B8D; padding :5px;width :99%;table-layout:fixed;" cellpadding="2" cellspacing="2">
+                            <tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;border: solid 1px #659EC7;">
+                                <td width="40">
+                                    &nbsp;
+                                </td>
+                                <td colspan="12" style="text-align:center;">
+                                    <h4><strong>Informacoes do Produto: </strong></h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table style="color:#9F000F;font-size:large; padding :5px; margin: 10px;" cellpadding="12" cellspacing="16">
+                                        <tr>
+                                            <td width="20">&nbsp;</td>
+                                            <td><b>ID:</b></td>
+                                            <td width="20">&nbsp;</td>
+                                            <td>
+                                                <input class="form-control" type="text" #Id (ngModel)="Ids" style="background-color:tan;width: 200px;" readonly value="{{ Ids }}">
+                                            </td>
+
+                                            <td width="20">&nbsp;</td>
+                                            <td><b>Nome: </b></td>
+                                            <td width="20">&nbsp;</td>
+                                            <td>
+                                                <input class="form-control" style="width: 250px;" type="text" (ngModel)="Titulos" #Titulo maxlength="100" value="{{ Titulos }}">
+                                            </td>
+
+                                            <td width="20">&nbsp;</td>
+                                            <td><b>Valor: </b></td>
+                                            <td width="20">&nbsp;</td>
+                                            <td>
+                                                <input class="form-control" style="width: 250px;" type="number" (ngModel)="Valores" #Valor value="{{ Valores }}">
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td width="20">&nbsp;</td>
+                                            <td><b>Ativo:</b></td>
+                                            <td width="20">&nbsp;</td>                                            
+                                            <td class="form-check-inline">
+                                                <input class="form-check-input" type="checkbox" (click)="changeStatus()" [(ngModel)]="Ativos" >
+                                            </td>
+
+                                            <!--<td width="20">&nbsp;</td>
+                                            <td><b>Desativo:</b></td>
+                                            <td width="20">&nbsp;</td>
+                                            <td class="form-check-inline">
+                                                <input class="form-check-input" #Ativo type="radio" name="Ativo" value="false" (ngModel)="Ativos">
+                                            </td>-->
+
+                                            <td width="20">&nbsp;</td>
+                                            <td><b>Cadastro:</b></td>
+                                            <td width="20">&nbsp;</td>
+                                            <td>
+                                                <input class="form-control" style="width: 250px;text-align:center;background-color:tan" type="text" #DataCadastro
+                                                       (ngModel)="DataCadastros" value="{{ DataCadastros | date:'dd/MMMM/yyyy' }}" readonly>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" colspan="2">
+                                    <button (click)=ngAddProduto(Id.value,Titulo.value,Valor.value,DataCadastro.value)
+                                            style="background-color:#428d28;color:#FFFFFF;font-size:large;width:220px;
+                                                        border-color:#a2aabe;border-style:outset;border-width:2px;">
+                                        SALVAR
+                                    </button>
+                                </td>
+                                &nbsp;&nbsp;
+                                <td colspan="4">
+                                    <button (click)=closeEdit() style="background-color:#FF0000;color:#FFFFFF;font-size:large;width:220px;
+                                                        border-color:#a2aabe;border-style:outset;border-width:2px;position:relative;float:right;">
+                                        CANCELAR
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <hr style="height: 1px;color: #123455;background-color: #d55500;border: none;color: #d55500;" />
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table class='table' id="tblContainer">
+                <thead>
+                    <tr>
+                        <td>
+                            <button icon="fa-plus" style="float:left" class="btn btn-primary" 
+                                    data-toggle="tooltip" data-placement="top" title="NOVO PRODUTO" (click)="AddProduto()">
+                                <span class='glyphicon glyphicon-th-list'></span>
+                            </button>
+                            <!--&nbsp;&nbsp;&nbsp;
+                            <button class="btn btn-primary" (click)="refresh()"><span class='glyphicon glyphicon-refresh'></span> Refresh</button>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Status</th>
+                        <th>Titulo</th>
+                        <th>Valor</th>
+                        <th>Data Cadastro</th>
+                        <th style="text-align:center">Acoes</th>
+                    </tr>
+                    <tr *ngIf="!produtos" style="color: red;"><td colspan="12" style="text-align:center;">
+                        <b>Nenhum produto encontrado!!</b></td></tr>
+                </thead>
+                <tbody *ngIf="!!produtos">
+                    <tr *ngFor="let produto of produtos">
+                        <td *ngIf="!produto.ativo">
+                            <h6 style="color:#f00">INATIVO</h6>
+                        </td>
+                        <td *ngIf="!!produto.ativo">
+                            <h6 style="color:green">ATIVO</h6>
+                        </td>
+                        <td>{{ produto.titulo }}</td>
+                        <td>{{ produto.valor }}</td>
+                        <td>{{ produto.dataCadastro | date:"dd-MMMM-yyyy" }}</td>
+                        <td align="center">
+                            <button class="btn btn-warning btn-sm" style="border-radius:40px;"  data-toggle="tooltip" data-placement="top" title="EDITAR"
+                                    (click)="UpdateProduto(produto.id, produto.ativo, produto.titulo, produto.valor, produto.dataCadastro)">
+                                <span class='glyphicon glyphicon-edit'></span>
+                            </button>
+                            <button class="btn btn-danger btn-sm" style="border-radius:40px;" 
+                                    (click)="ngDeleteProduto(produto.id)" data-toggle="tooltip" data-placement="top" title="DELETAR">
+                                <span class='glyphicon glyphicon-erase'></span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</table>

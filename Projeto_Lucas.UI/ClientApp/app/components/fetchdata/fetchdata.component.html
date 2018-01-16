@@ -1,0 +1,181 @@
+<h1>Clientes</h1>
+
+<hr style="height: 1px;color: #123455;background-color: #d55500;border: none;color: #d55500;" />
+<p *ngIf="!clientes"><em>Loading Clientes please Wait ! ...</em></p>
+<nav>
+    <a routerLink="/cliente-editar" routerLinkActive="active">Add</a>
+</nav>
+<button routerLink="/cliente-editar" routerLinkActive="active" (click)="AddCliente()">
+    <router-outlet>router-outlet</router-outlet>
+</button>
+<table class='table' id="tblContainer" *ngIf="clientes">
+    <tr *ngIf="AddClienteTable">
+        <td>
+            <table>
+                <tr>
+                    <td>
+                        <table style="background-color:#FFFFFF; border: 3px #6D7B8D; padding :5px;width :99%;table-layout:fixed;" cellpadding="2" cellspacing="2">
+                            <tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;border: solid 1px #659EC7;">
+                                <td width="40">
+                                    &nbsp;
+                                </td>
+                                <td colspan="12" style="text-align:center;">
+                                    <h4><strong>Informacoes do Cliente: </strong></h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table style="color:#9F000F;font-size:large; padding :5px; margin: 10px;" cellpadding="12" cellspacing="16">
+                                        <tr>
+                                            <td width="20">&nbsp;</td>
+                                            <td><b>ID:</b></td>
+                                            <td width="20">&nbsp;</td>
+                                            <td>
+                                                <input class="form-control" type="text" #Id (ngModel)="Ids" style="background-color:tan; width: 150px;" readonly value="{{ Ids }}">
+                                            </td>
+
+                                            <td width="20">&nbsp;</td>
+                                            <td><b>Nome: </b></td>
+                                            <td width="20">&nbsp;</td>
+                                            <td>
+                                                <input class="form-control" style="width: 250px;" type="text" (ngModel)="Nomes" #Nome maxlength="100" value="{{ Nomes }}">
+                                            </td>
+                                            <td width="20">&nbsp;</td>
+
+                                            <td><b>Email: </b></td>
+                                            <td width="20">&nbsp;</td>
+                                            <td>
+                                                <input class="form-control" style="width: 250px;" type="email" (ngModel)="Emails" #Email maxlength="100" value="{{ Emails }}">
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td width="20">&nbsp;</td>
+                                            <td><b>CPF:</b></td>
+                                            <td width="20">&nbsp;</td>
+                                            <td>
+                                                <input [textMask]="{mask: maskCPF}" class="form-control" type="text" #CPF [(ngModel)]="CPFs" maxlength="15" value="{{ CPFs }}">
+                                            </td>
+
+                                            <td width="20">&nbsp;</td>
+                                            <td><b>Nascimento: </b></td>
+                                            <td width="20">&nbsp;</td>
+                                            <td>
+                                                <input style="width: 250px;text-align:center;" type="text" (ngModel)="Nascimentos" class="form-control"
+                                                       #Nascimento value="{{ Nascimentos | date:'dd/MM/yyyy' }}" [textMask]="{mask: maskDate}">
+                                                <!--<mat-datepicker #myDatepicker></mat-datepicker>-->
+                                            </td>
+                                            <td width="20">&nbsp;</td>
+
+                                            <td><b>Endereco: </b></td>
+                                            <td width="20">&nbsp;</td>
+                                            <td>
+                                                <input class="form-control" style="width: 250px;" type="text" (ngModel)="Endereco" #Endereco maxlength="100" value="{{ Enderecos }}">
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td width="20">&nbsp;</td>
+                                            <td><b>Ativo:</b></td>
+                                            <td width="20">&nbsp;</td>
+                                            <td class="form-check-inline">
+                                                <input class="form-check-input" type="checkbox" (click)="changeStatus()" [(ngModel)]="Ativos">
+                                            </td>
+
+                                            <td width="20">&nbsp;</td>
+                                            <td><b>Cadastro:</b></td>
+                                            <td width="20">&nbsp;</td>
+                                            <td>
+                                                <input style="width: 250px;text-align:center;background-color:tan" type="text" #DataCadastro
+                                                       (ngModel)="DataCadastros" value="{{ DataCadastros | date:'dd/MMMM/yyyy' }}" class="form-control" readonly>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" colspan="2">
+                                    <button (click)=ngAddCliente(Id.value,Nome.value,Email.value,Nascimento.value,DataCadastro.value,CPF.value,Endereco.value)
+                                            style="background-color:#428d28;color:#FFFFFF;font-size:large;width:220px;
+                                                        border-color:#a2aabe;border-style:outset;border-width:2px;">
+                                        SALVAR
+                                    </button>
+                                </td>
+                                &nbsp;&nbsp;
+                                <td colspan="4">
+                                    <button (click)=closeEdit() style="background-color:#FF0000;color:#FFFFFF;font-size:large;width:220px;
+                                                        border-color:#a2aabe;border-style:outset;border-width:2px;position:relative;float:right;">
+                                        CANCELAR
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <hr style="height: 1px;color: #123455;background-color: #d55500;border: none;color: #d55500;" />
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table class='table' id="tblContainer">
+                <thead>
+                    <tr>
+                        <td>
+                            <button icon="fa-plus" style="float:left" class="btn btn-primary"
+                                    (click)="AddCliente()" data-toggle="tooltip" data-placement="top" title="NOVO CLIENTE">
+                                <span class='glyphicon glyphicon-th-list'></span>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>Status</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Nascimento</th>
+                        <th>Endereco</th>
+                        <th>Data Cadastro</th>
+                        <th style="text-align:center">Acoes</th>
+                    </tr>
+
+                    <tr *ngIf="!clientes" style="color: red;">
+                        <td colspan="12" style="text-align:center;">
+                            <b>Nenhum cliente encontrado!!</b>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody *ngIf="!!clientes">
+                    <tr *ngFor="let cliente of clientes">
+                        <td *ngIf="!cliente.ativo">
+                            <h6 style="color:#f00">INATIVO</h6>
+                        </td>
+                        <td *ngIf="!!cliente.ativo">
+                            <h6 style="color:green">ATIVO</h6>
+                        </td>
+                        <td>{{ cliente.nome }}</td>
+                        <td>{{ cliente.email }}</td>
+                        <td>{{ cliente.nascimento | date:"dd-MM-yyyy" }}</td>
+                        <td>{{ cliente.endereco }}</td>
+                        <td>{{ cliente.dataCadastro | date:"dd-MM-yyyy" }}</td>
+                        <td align="center">
+                            <button class="btn btn-warning btn-sm" style="border-radius:40px;" data-toggle="tooltip" data-placement="top" title="EDITAR"
+                                    (click)="UpdateCliente(cliente.id,cliente.nome,cliente.email,cliente.nascimento,cliente.dataCadastro,cliente.cpf,cliente.endereco,cliente.ativo)">
+                                <span class='glyphicon glyphicon-edit'></span>
+                            </button>
+                            <button class="btn btn-danger btn-sm" style="border-radius:40px;"
+                                    (click)="ngDeleteCliente(cliente.id)" data-toggle="tooltip" data-placement="top" title="DELETAR">
+                                <span class='glyphicon glyphicon-erase'></span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</table>
+

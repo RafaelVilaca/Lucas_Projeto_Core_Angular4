@@ -1,0 +1,63 @@
+﻿<div class="col-sm-12" style="text-align: center;">
+    <h3><b>EDITAR CLIENTE</b></h3>
+</div>
+
+<div class="form-horizontal">
+    <div class="col-sm-6">
+        <h4><b>ID:</b></h4>
+        <input class="form-control" type="text" #Id (ngModel)="Ids"
+               style="background-color:tan; width: 400px;text-align:center;" readonly value="{{ Ids }}">
+    </div>
+
+    <div class="col-sm-6">
+        <h4><b>Nome:</b></h4>
+        <input class="form-control" style="width: 400px;text-align:center;" type="text" (ngModel)="Nomes" #Nome maxlength="100"
+               value="{{ Nomes }}" placeholder="Nome Cliente">
+    </div>
+
+    <div class="col-sm-6">
+        <h4><b>Email:</b></h4>
+        <input class="form-control" style="width: 400px;text-align:center;" type="email" (ngModel)="Emails" #Email
+               maxlength="100" value="{{ Emails }}" placeholder="admin@admin.com">
+    </div>
+
+    <div class="col-sm-6">
+        <h4><b>CPF:</b></h4>
+        <input style="width: 400px;text-align:center;" [textMask]="{mask: maskCPF}" class="form-control" type="text" #CPF
+               [(ngModel)]="CPFs" maxlength="15" value="{{ CPFs }}" placeholder="ex: 333.333.333-33">
+    </div>
+
+    <div class="col-sm-6">
+        <h4><b>Endereco:</b></h4>
+        <input class="form-control" style="width: 400px;text-align:center;" type="text" (ngModel)="Endereco" #Endereco
+               maxlength="100" value="{{ Enderecos }}" placeholder="ex: Rua das palmeiras, Franca, 1696">
+    </div>
+
+    <div class="col-sm-6">
+        <h4><b>Data Nascimento:</b></h4>
+        <input style="width: 400px;text-align:center;" type="text" (ngModel)="Nascimentos" class="form-control"
+               #Nascimento value="{{ Nascimentos | date:'dd/MM/yyyy' }}" [textMask]="{mask: maskDate}">
+    </div>
+
+    <div class="col-sm-6">
+        <h4><b>Data Cadastro:</b></h4>
+        <input style="width: 400px;text-align:center;background-color:tan" type="text" #DataCadastro
+               (ngModel)="DataCadastros" value="{{ DataCadastros | date:'dd/MMMM/yyyy' }}" class="form-control" readonly>
+    </div>
+
+    <div class="col-sm-6">
+        <h4><b>Ativo:</b></h4>
+        <input class="form-check-input" type="checkbox" (click)="changeStatus()" [(ngModel)]="Ativos">
+    </div>
+    <p>&nbsp;</p>
+    <div class="col-sm-12">
+        <button (click)=ngAddCliente(Id.value,Nome.value,Email.value,Nascimento.value,DataCadastro.value,CPF.value,Endereco.value)
+                style="width:220px;font-size:large;" class="btn btn-success">
+            SALVAR
+        </button>
+
+        <button (click)=closeEdit() style="width:220px;font-size:large;" class="btn btn-danger">
+            CANCELAR
+        </button>
+    </div>
+</div>
