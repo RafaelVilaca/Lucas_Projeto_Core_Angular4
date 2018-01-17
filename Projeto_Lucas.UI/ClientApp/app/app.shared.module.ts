@@ -34,8 +34,8 @@ import { TextMaskModule } from '../src/angularTextMask';
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
-            { path: 'cliente-editar', component: ClienteEditarComponent },
-            { path: 'produto-editar', component: ProdutoEditarComponent },
+            { path: 'cliente-editar/:id', component: ClienteEditarComponent },
+            { path: 'produto-editar/:id', component: ProdutoEditarComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]

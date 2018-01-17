@@ -45,9 +45,9 @@ namespace Projeto_Lucas.Api.Controllers
         [HttpPost]
         [Route("cliente")]
         public IActionResult InserirCliente([FromBody] Cliente cliente)
-            {
+        {
             try
-            {               
+            {
                 return Ok(_clienteService.InserirCliente(cliente));
             }
             catch (Exception e)
@@ -61,7 +61,7 @@ namespace Projeto_Lucas.Api.Controllers
         public IActionResult EditarCliente([FromBody] Cliente cliente)
         {
             try
-            {     
+            {
                 return Ok(_clienteService.EditarCliente(cliente));
             }
             catch (Exception e)
@@ -75,7 +75,7 @@ namespace Projeto_Lucas.Api.Controllers
         public IActionResult DeletarCliente(int id)
         {
             try
-            {                
+            {
                 return Ok(_clienteService.DeletarCliente(id));
             }
             catch (Exception e)

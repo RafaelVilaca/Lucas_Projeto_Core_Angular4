@@ -25,76 +25,24 @@ export class FetchDataComponent {
     public CPFs = 0;
     public Emails = "";
     public Enderecos = "";
-    public NovoCliente = false;
-    chkValidacao: boolean = true;
-
-    public maskCPF = [/[1-9]/, /[1-9]/, /[1-9]/, '.', /[1-9]/, /[1-9]/, /[1-9]/, '.', /[1-9]/, /[1-9]/, /[1-9]/, '-', /[1-9]/, /[1-9]/];
-    //public maskTelefone = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
-    public maskDate = [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/];
-    
-    AddClienteTable: boolean = false;
-
-    animStatus: string = 'inactive';
-    myName: string;
 
     constructor(private http: Http, private route: ActivatedRoute, private router: Router) {
-        this.myName = "Rafael";
-        this.NovoCliente = false;
-        this.AddClienteTable = false;
         this.ngGetClientes();        
     }
 
-    changeStatus() {
-        this.chkValidacao = this.chkValidacao ? false : true;
-    }
-
-    animButton() {
-        this.animStatus = (this.animStatus === 'inactive' ? 'active' : 'inactive');
-    }
-
     AddCliente() {
-        this.Ids = 0;
-        this.Nomes = "";
-        this.CPFs = 0;
-        this.DataCadastros = new Date();
-        this.Nascimentos = new Date();
-        this.Emails = "";
-        this.Enderecos = "";
-        this.NovoCliente = true;
-        this.chkValidacao = true;
-
-        this.router.navigate(['/cliente-editar',
-            this.Ids, this.Nomes, this.CPFs, this.DataCadastros, this.Nascimentos, this.Emails, this.Enderecos, this.NovoCliente, this.chkValidacao]);
+        this.router.navigate(['/cliente-editar/' + '0']);
     }
 
-    UpdateCliente(Id: number, Nome: string, Email: string, Nascimento: Date, DataCadastro: Date,
-        CPF: number, Endereco: string, Ativo: boolean) {
-        this.Ids = Id;
-        this.Nomes = Nome;
-        this.CPFs = CPF;
-        this.DataCadastros = DataCadastro;
-        this.Nascimentos = Nascimento;
-        this.Emails = Email;
-        this.Enderecos = Endereco;
-        this.Ativos = Ativo;
-        this.NovoCliente = false;
-        this.chkValidacao = Ativo;
-
-        this.router.navigate(['/cliente-editar',
-            this.Ids, this.Nomes, this.CPFs, this.DataCadastros, this.Nascimentos, this.Emails, this.Enderecos, this.NovoCliente, this.chkValidacao]);
+    UpdateCliente(Id: number) {
+        this.router.navigate(['/cliente-editar/' + Id]);
     }
 
     ngGetClientes() {
         this.http.get('http://localhost:5001/api/clientes').subscribe(result => {
             this.clientes = result.json() as Cliente[];
         }, error => console.error(error));
-    }
-
-    ngGetCliente(id: number) {
-        return this.http.get('http://localhost:5001/api/cliente/' + id).subscribe(result => {
-            this.cliente = result.json() as Cliente;
-        }, error => console.error(error));
-    }    
+    } 
 
     ngDeleteCliente(id: number) {
         let r = confirm("Deseja realmente excluir esse Cliente?")
@@ -111,20 +59,6 @@ export class FetchDataComponent {
             }, 1000);
         }
     }
-
-    closeEdit() {
-        this.Ids = 0;
-        this.Ativos = true;
-        this.DataCadastros = new Date();
-        this.Nomes = "";
-        this.Nascimentos = new Date();
-        this.CPFs = 0;
-        this.Emails = "";
-        this.Enderecos = "";
-        this.AddClienteTable = false;
-        this.chkValidacao = true;
-    }
-
 }
 
 interface Cliente {

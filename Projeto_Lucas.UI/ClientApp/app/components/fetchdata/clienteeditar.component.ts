@@ -1,18 +1,17 @@
-﻿import { Component, Input } from '@angular/core';
+﻿import { Component, OnInit, Input } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
-import { FetchDataComponent } from './fetchdata.component';
 
 @Component({
     selector: 'clienteeditar',
     templateUrl: './clienteeditar.component.html'
 })
 
-export class ClienteEditarComponent {
+export class ClienteEditarComponent implements OnInit {
 
     public Ids = 0;
     public Ativos = true;
@@ -22,23 +21,37 @@ export class ClienteEditarComponent {
     public CPFs = 0;
     public Emails = "";
     public Enderecos = "";
-    public NovoCliente = false;
     chkValidacao: boolean = true;
 
-    constructor(private http: Http, private route: ActivatedRoute, private router: Router, public fetch: FetchDataComponent) {
-        this.Ids = fetch.Ids;
-        this.Nomes = fetch.Nomes;
-        this.CPFs = fetch.CPFs;
-        this.DataCadastros = fetch.DataCadastros;
-        this.Nascimentos = fetch.Nascimentos;
-        this.Emails = fetch.Emails;
-        this.Enderecos = fetch.Enderecos;
-        this.NovoCliente = fetch.NovoCliente;
-        this.chkValidacao = fetch.chkValidacao;
-        this.Ativos = this.chkValidacao;
-    }    
+    cliente: Cliente;
 
-    public maskCPF = [/[1-9]/, /[1-9]/, /[1-9]/, '.', /[1-9]/, /[1-9]/, /[1-9]/, '.', /[1-9]/, /[1-9]/, /[1-9]/, '-', /[1-9]/, /[1-9]/];
+    constructor(private http: Http, private route: ActivatedRoute, private router: Router) {
+ 
+    }
+
+    ngOnInit() {
+        this.route.params.subscribe(params => {
+            this.Ids = + params['id'];
+        });
+        if (this.Ids != 0)
+            this.ngGetCliente(this.Ids);
+    }
+
+    ngGetCliente(id: number) {
+        return this.http.get('http://localhost:5001/api/cliente/' + id).subscribe(result => {
+            this.cliente = result.json() as Cliente;
+            this.Ids = this.cliente.id;
+            this.Ativos = this.cliente.ativo;
+            this.DataCadastros = this.cliente.dataCadastro;
+            this.Nomes = this.cliente.nome;
+            this.Nascimentos = this.cliente.nascimento;
+            this.CPFs = this.cliente.cpf;
+            this.Emails = this.cliente.email;
+            this.Enderecos = this.cliente.endereco;
+        }, error => console.error(error));
+    }   
+
+    public maskCPF = [/[0-9]/, /[0-9]/, /[0-9]/, '.', /[0-9]/, /[0-9]/, /[0-9]/, '.', /[0-9]/, /[0-9]/, /[0-9]/, '-', /[0-9]/, /[0-9]/];
     //public maskTelefone = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
     public maskDate = [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/];
 
@@ -53,6 +66,11 @@ export class ClienteEditarComponent {
 
         let cpfSemMascara = CPF.replace('.', '').replace('.', '').replace('-', '');
 
+        var parse_email = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i;
+
+        if (!parse_email.test(Email))
+            return alert("Email incorreto, ex: 'exemplo@exemplo.com.br'");
+        
         let clienteAdd = {
             Id: Id == "" ? 0 : Id,
             Nome: Nome,
@@ -66,7 +84,7 @@ export class ClienteEditarComponent {
 
         let mensagem: any = "";
 
-        if (this.NovoCliente) {
+        if (this.Ids == 0) {
             this.http.post('http://localhost:5001/api/cliente', clienteAdd)
                 .toPromise()
                 .then(response => {
@@ -85,4 +103,15 @@ export class ClienteEditarComponent {
             this.router.navigate(['/fetch-data']);
         }, 1000);
     }
+}
+
+interface Cliente {
+    id: number,
+    ativo: boolean,
+    dataCadastro: Date,
+    nome: string,
+    nascimento: Date,
+    cpf: number,
+    email: string,
+    endereco: string
 }

@@ -1,5 +1,5 @@
 ﻿<div class="col-sm-12" style="text-align: center;">
-    <h3><b>EDITAR PRODUTO</b></h3>
+    <h4><b>DADOS PRODUTO</b></h4>
 </div>
 
 <div class="form-horizontal">
@@ -18,7 +18,7 @@
     <div class="col-sm-6">
         <h4><b>Valores (R$):</b></h4>
         <input class="form-control" style="width: 400px;text-align:center;" type="text"
-               [(ngModel)]="Valores" #Valor value="{{ Valores }}" [textMask]="{mask: maskValor}">
+               [(ngModel)]="Valores" #Valor value="{{ Valores }}" >
     </div>
 
     <div class="col-sm-6">
@@ -33,7 +33,7 @@
     </div>
     <p>&nbsp;</p>
     <div class="col-sm-12">
-        <button (click)=ngAddProduto(Id.value,Nome.value,Email.value,Nascimento.value,DataCadastro.value,CPF.value,Endereco.value)
+        <button (click)=ngAddProduto(Id.value,Titulo.value,Valor.value,DataCadastro.value)
                 style="width:220px;font-size:large;" class="btn btn-success">
             SALVAR
         </button>

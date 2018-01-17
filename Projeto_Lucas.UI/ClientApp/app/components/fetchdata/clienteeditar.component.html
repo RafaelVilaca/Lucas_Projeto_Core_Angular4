@@ -1,12 +1,12 @@
 ﻿<div class="col-sm-12" style="text-align: center;">
-    <h3><b>EDITAR CLIENTE</b></h3>
+    <h4><b>DADOS CLIENTE</b></h4>
 </div>
 
 <div class="form-horizontal">
     <div class="col-sm-6">
         <h4><b>ID:</b></h4>
         <input class="form-control" type="text" #Id (ngModel)="Ids"
-               style="background-color:tan; width: 400px;text-align:center;" readonly value="{{ Ids }}">
+               style="width: 400px;text-align:center;" readonly value="{{ Ids }}">
     </div>
 
     <div class="col-sm-6">
@@ -41,7 +41,7 @@
 
     <div class="col-sm-6">
         <h4><b>Data Cadastro:</b></h4>
-        <input style="width: 400px;text-align:center;background-color:tan" type="text" #DataCadastro
+        <input style="width: 400px;text-align:center;" type="text" #DataCadastro
                (ngModel)="DataCadastros" value="{{ DataCadastros | date:'dd/MMMM/yyyy' }}" class="form-control" readonly>
     </div>
 

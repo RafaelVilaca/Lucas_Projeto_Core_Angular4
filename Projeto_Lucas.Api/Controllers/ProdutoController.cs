@@ -45,10 +45,9 @@ namespace Projeto_Lucas.Api.Controllers
         [HttpPost]
         [Route("produto")]
         public IActionResult InserirProduto([FromBody] Produto produto)
-
         {
             try
-            {                
+            {
                 return Ok(_produtoService.InserirProduto(produto));
             }
             catch (Exception e)
@@ -62,7 +61,7 @@ namespace Projeto_Lucas.Api.Controllers
         public IActionResult EditarProduto([FromBody] Produto produto)
         {
             try
-            {                
+            {
                 return Ok(_produtoService.EditarProduto(produto));
             }
             catch (Exception e)
@@ -76,7 +75,7 @@ namespace Projeto_Lucas.Api.Controllers
         public IActionResult DeletarProduto(int id)
         {
             try
-            {                
+            {
                 return Ok(_produtoService.DeletarProduto(id));
             }
             catch (Exception e)

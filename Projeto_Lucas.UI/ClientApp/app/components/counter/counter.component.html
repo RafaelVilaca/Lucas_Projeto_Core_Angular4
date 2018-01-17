@@ -103,8 +103,8 @@
     <thead>
         <tr>
             <td>
-                <button icon="fa-plus" style="float:left" class="btn btn-primary" routerLink="/produto-editar" routerLinkActive="active"
-                        data-toggle="tooltip" data-placement="top" title="NOVO PRODUTO" (click)="AddProduto()">
+                <button icon="fa-plus" style="float:left" class="btn btn-primary" (click)="AddProduto()"
+                        data-toggle="tooltip" data-placement="top" title="NOVO PRODUTO">
                     <span class='glyphicon glyphicon-th-list'></span>
                 </button>
                 <!--&nbsp;&nbsp;&nbsp;
@@ -137,7 +137,7 @@
             <td>{{ produto.dataCadastro | date:"dd-MMMM-yyyy" }}</td>
             <td align="center">
                 <button class="btn btn-warning btn-sm" style="border-radius:40px;" data-toggle="tooltip" data-placement="top" title="EDITAR"
-                        (click)="UpdateProduto(produto.id, produto.ativo, produto.titulo, produto.valor, produto.dataCadastro)">
+                        (click)="UpdateProduto(produto.id)">
                     <span class='glyphicon glyphicon-edit'></span>
                 </button>
                 <button class="btn btn-danger btn-sm" style="border-radius:40px;"
