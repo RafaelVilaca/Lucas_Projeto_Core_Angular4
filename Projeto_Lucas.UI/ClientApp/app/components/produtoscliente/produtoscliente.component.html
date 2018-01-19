@@ -1,0 +1,45 @@
+﻿<h1>Produtos / Clientes</h1>
+
+<hr style="height: 1px;color: #123455;background-color: #d55500;border: none;color: #d55500;" />
+<p *ngIf="!produtoscliente"><em>Loading Produtos/Clientes please Wait ! ...</em></p>
+
+<table class='table' id="tblContainer" *ngIf="produtoscliente">
+    <thead>
+        <tr>
+            <td>
+                <button icon="fa-plus" style="float:left" class="btn btn-primary" (click)="AddProdutoCliente()"
+                        data-toggle="tooltip" data-placement="top" title="NOVO PRODUTO/CLIENTE">
+                    <span class='glyphicon glyphicon-th-list'></span>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <th>IdCliente</th>
+            <th>IdProduto</th>
+            <th>Data Cadastro</th>
+            <th>Qtde</th>
+            <th style="text-align:center">Acoes</th>
+        </tr>
+        <tr *ngIf="!produtocliente" style="color: red;">
+            <td colspan="12" style="text-align:center;">
+                <b>Nenhum Produto/Cliente encontrado!!</b>
+            </td>
+        </tr>
+    </thead>
+    <tbody *ngIf="!!produtoscliente">
+        <tr *ngFor="let produtocliente of produtoscliente">
+
+            <td>{{ produtocliente.idcliente }}</td>
+            <td>{{ produtocliente.idproduto }}</td>
+            <td>{{ produtocliente.dataCadastro | date:"dd-MMMM-yyyy" }}</td>
+            <td>{{ produtocliente.qtde }}</td>
+
+            <td align="center">
+                <button class="btn btn-warning btn-sm" style="border-radius:40px;" data-toggle="tooltip" data-placement="top" title="EDITAR"
+                        (click)="UpdateProdutoCliente(produtocliente.id)">
+                    <span class='glyphicon glyphicon-edit'></span>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

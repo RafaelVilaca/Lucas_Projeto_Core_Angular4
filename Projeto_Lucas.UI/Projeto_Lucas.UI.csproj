@@ -24,12 +24,16 @@
   <ItemGroup>
     <None Remove="ClientApp\app\components\counter\produtoeditar.component.ts" />
     <None Remove="ClientApp\app\components\fetchdata\clienteeditar.component.ts" />
+    <None Remove="ClientApp\app\components\produtoscliente\editarprodutoscliente.component.ts" />
+    <None Remove="ClientApp\app\components\produtoscliente\produtoscliente.component.ts" />
     <None Remove="ClientApp\src\angularTextMask.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\components\counter\produtoeditar.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\fetchdata\clienteeditar.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\produtoscliente\editarprodutoscliente.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\produtoscliente\produtoscliente.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\angularTextMask.ts" />
   </ItemGroup>
 

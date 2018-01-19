@@ -116,6 +116,7 @@
             <th>Titulo</th>
             <th>Valor</th>
             <th>Data Cadastro</th>
+            <th>Qtde</th>
             <th style="text-align:center">Acoes</th>
         </tr>
         <tr *ngIf="!produtos" style="color: red;">
@@ -135,6 +136,8 @@
             <td>{{ produto.titulo }}</td>
             <td>{{ produto.valor | currency:'BRL':true }}</td>
             <td>{{ produto.dataCadastro | date:"dd-MMMM-yyyy" }}</td>
+            <td>{{ produto.qtde }}</td>
+
             <td align="center">
                 <button class="btn btn-warning btn-sm" style="border-radius:40px;" data-toggle="tooltip" data-placement="top" title="EDITAR"
                         (click)="UpdateProduto(produto.id)">

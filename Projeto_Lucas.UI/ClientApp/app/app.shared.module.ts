@@ -12,6 +12,9 @@ import { CounterComponent } from './components/counter/counter.component';
 import { ClienteEditarComponent } from './components/fetchdata/clienteeditar.component';
 import { ProdutoEditarComponent } from './components/counter/produtoeditar.component';
 
+import { ProdutosClienteComponent } from './components/produtoscliente/produtoscliente.component';
+import { EditarProdutosClienteComponent } from './components/produtoscliente/editarprodutoscliente.component';
+
 import { TextMaskModule } from '../src/angularTextMask';
 
 @NgModule({
@@ -22,7 +25,9 @@ import { TextMaskModule } from '../src/angularTextMask';
         FetchDataComponent,
         HomeComponent,
         ClienteEditarComponent,
-        ProdutoEditarComponent
+        ProdutoEditarComponent,
+        ProdutosClienteComponent,
+        EditarProdutosClienteComponent
     ],
     imports: [
         CommonModule,
@@ -32,10 +37,12 @@ import { TextMaskModule } from '../src/angularTextMask';
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
-            { path: 'counter', component: CounterComponent },
-            { path: 'fetch-data', component: FetchDataComponent },
-            { path: 'cliente-editar/:id', component: ClienteEditarComponent },
-            { path: 'produto-editar/:id', component: ProdutoEditarComponent },
+            { path: 'produtos', component: CounterComponent },
+            { path: 'produtos/editar/:id', component: ProdutoEditarComponent },
+            { path: 'clientes', component: FetchDataComponent },
+            { path: 'clientes/editar/:id', component: ClienteEditarComponent },            
+            { path: 'produtos-cliente', component: ProdutosClienteComponent },
+            { path: 'produtos-cliente/editar/:id', component: EditarProdutosClienteComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]

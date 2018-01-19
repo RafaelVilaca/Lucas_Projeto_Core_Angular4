@@ -1,0 +1,68 @@
+﻿<div class="col-sm-12" style="text-align: center;">
+    <h4><b>DADOS PRODUTO / CLIENTE</b></h4>
+</div>
+
+<div class="form-horizontal">
+    <div class="col-sm-6">
+        <h4><b>ID:</b></h4>
+        <input class="form-control" type="text" #Id (ngModel)="Ids"
+               style="width: 400px;text-align:center;" readonly value="{{ Ids }}">
+    </div>
+
+    <div class="col-sm-6">
+        <h4><b>Data Cadastro:</b></h4>
+        <input style="width: 400px;text-align:center;" type="text" #DataCadastro
+               (ngModel)="DataCadastros" value="{{ DataCadastros | date:'dd/MMMM/yyyy' }}" class="form-control" readonly>
+    </div>
+
+    <!--<div class="col-sm-6">
+        <h4><b>Cliente:</b></h4>
+        <input class="form-control" style="width: 400px;text-align:center;" type="text"
+               (ngModel)="IdCliente" #IdCliente maxlength="100" value="{{ IdClientes }}">
+    </div>-->
+
+    <div class="col-sm-6">
+        <h4><b>Cliente:</b></h4>
+        <select (change)="onSelectCliente($event.target.value)" class="form-control" 
+                style="width: 400px;text-align:center;" [(ngModel)]="cliente.id">
+            <option *ngFor="let cliente of clientes" value={{ cliente.id }}>
+                {{ cliente.nome }}
+            </option>
+        </select>
+    </div>
+
+    <!--<div class="col-sm-6">
+        <h4><b>Produto:</b></h4>
+        <input class="form-control" style="width: 400px;text-align:center;" type="text"
+               (ngModel)="IdProduto" #IdProduto value="{{ IdProdutos }}">
+    </div>-->
+
+    <div class="col-sm-6">
+        <h4><b>Produto:</b></h4>
+        <select (change)="onSelectProduto($event.target.value)" class="form-control" 
+                style="width: 400px;text-align:center;" [(ngModel)]="produto.id">
+            <option *ngFor="let produto of produtos" value={{ produto.id }}>
+                {{ produto.titulo }}
+            </option>
+        </select>
+    </div>
+
+    <div class="col-sm-6">
+        <h4><b>Quantidade:</b></h4>
+        <input style="width: 400px;text-align:center;" type="text" #Qtde
+               (ngModel)="Qtdes" value="{{ Qtdes }}" class="form-control" maxlength="5">
+    </div>
+
+    <div class="col-sm-12" style="margin-top:10px;position:relative;">
+        <button (click)=ngAddProdutoCliente(Id.value,IdCliente.value,IdProduto.value,DataCadastro.value,Qtde.value)
+                style="width:220px;font-size:large;" class="btn btn-success">
+            SALVAR
+        </button>
+
+        <button style="width:220px;font-size:large;" class="btn btn-danger"
+                routerLink="/produtos-cliente" routerLinkActive="active">
+            CANCELAR
+        </button>
+    </div>
+</div>
+

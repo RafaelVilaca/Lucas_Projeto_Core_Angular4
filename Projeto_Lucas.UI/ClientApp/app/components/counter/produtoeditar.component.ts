@@ -19,6 +19,7 @@ export class ProdutoEditarComponent implements OnInit {
     public DataCadastros = new Date();
     public Titulos = "";
     public Valores = 0;
+    public Qtdes = 0;
     chkValidacao: boolean = true;
 
     constructor(private http: Http, private route: ActivatedRoute, private router: Router) {
@@ -48,14 +49,18 @@ export class ProdutoEditarComponent implements OnInit {
             this.Valores = this.produto.valor;
             this.DataCadastros = this.produto.dataCadastro;
             this.chkValidacao = this.produto.ativo;
+            this.Qtdes = this.produto.qtde;
 
         }, error => console.error(error));
     }
 
-    ngAddProduto(Id: string, Titulo: string, Valor: string, DataCadastro: Date) {
+    ngAddProduto(Id: string, Titulo: string, Valor: string, DataCadastro: Date, Qtde: string) {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json; charset=utf-8');
         let mensagem = "";
+
+        if (Qtde <= "0" || !parseInt(Qtde))
+            return alert("Entre com uma quantidade acima de 0");
 
         let valorFormatado = Valor.replace(',', '.');
 
@@ -64,7 +69,8 @@ export class ProdutoEditarComponent implements OnInit {
             DataCadastro: new Date(),
             Titulo: Titulo,
             Valor: parseFloat(valorFormatado),
-            Ativo: this.chkValidacao
+            Ativo: this.chkValidacao,
+            Qtde: parseInt(Qtde)
         };
 
         if (this.Ids == 0) {
@@ -83,7 +89,7 @@ export class ProdutoEditarComponent implements OnInit {
         }
         setTimeout(() => {
             alert(mensagem);
-            this.router.navigate(['/counter']);
+            this.router.navigate(['/produto']);
         }, 250);
     }
 }
@@ -93,5 +99,6 @@ export interface Produto {
     ativo: boolean,
     dataCadastro: Date,
     titulo: string,
-    valor: number
+    valor: number,
+    qtde: number
 }

@@ -1,9 +1,7 @@
 ﻿using Projeto_Lucas.Domain.Entities;
 using Projeto_Lucas.Domain.IContratos.Repository;
 using Projeto_Lucas.Domain.IContratos.Services;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Projeto_Lucas.Business.Services
 {

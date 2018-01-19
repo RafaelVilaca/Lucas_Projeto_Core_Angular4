@@ -11,9 +11,10 @@ using System;
 namespace Projeto_Lucas.Api.Migrations
 {
     [DbContext(typeof(Projeto_LucasContext))]
-    partial class Projeto_LucasContextModelSnapshot : ModelSnapshot
+    [Migration("20180118151105_Tabela-ProdutosCliente")]
+    partial class TabelaProdutosCliente
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

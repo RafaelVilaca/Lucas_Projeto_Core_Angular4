@@ -6,7 +6,7 @@
     <div class="col-sm-6">
         <h4><b>ID:</b></h4>
         <input class="form-control" type="text" #Id (ngModel)="Ids"
-               style="background-color:tan; width: 400px;text-align:center;" readonly value="{{ Ids }}">
+               style="width: 400px;text-align:center;" readonly value="{{ Ids }}">
     </div>
 
     <div class="col-sm-6">
@@ -23,8 +23,14 @@
 
     <div class="col-sm-6">
         <h4><b>Data Cadastro:</b></h4>
-        <input style="width: 400px;text-align:center;background-color:tan" type="text" #DataCadastro
+        <input style="width: 400px;text-align:center;" type="text" #DataCadastro
                (ngModel)="DataCadastros" value="{{ DataCadastros | date:'dd/MMMM/yyyy' }}" class="form-control" readonly>
+    </div>
+
+    <div class="col-sm-6">
+        <h4><b>Quantidade:</b></h4>
+        <input style="width: 400px;text-align:center;" type="text" #Qtde
+               (ngModel)="Qtdes" value="{{ Qtdes }}" class="form-control" maxlength="5">
     </div>
 
     <div class="col-sm-6">
@@ -33,13 +39,13 @@
     </div>
     <p>&nbsp;</p>
     <div class="col-sm-12">
-        <button (click)=ngAddProduto(Id.value,Titulo.value,Valor.value,DataCadastro.value)
+        <button (click)=ngAddProduto(Id.value,Titulo.value,Valor.value,DataCadastro.value,Qtde.value)
                 style="width:220px;font-size:large;" class="btn btn-success">
             SALVAR
         </button>
 
         <button style="width:220px;font-size:large;" class="btn btn-danger"
-                routerLink="/counter" routerLinkActive="active">
+                routerLink="/produtos" routerLinkActive="active">
             CANCELAR
         </button>
     </div>

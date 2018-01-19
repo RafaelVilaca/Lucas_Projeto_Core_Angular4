@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Projeto_Lucas.Domain.Entities
 {
@@ -9,5 +10,7 @@ namespace Projeto_Lucas.Domain.Entities
         public decimal CPF { get; set; }
         public string Email { get; set; }
         public string Endereco { get; set; }
+
+        public virtual ICollection<ProdutoCliente> ProdutosClientes { get; set; }
     }
 }

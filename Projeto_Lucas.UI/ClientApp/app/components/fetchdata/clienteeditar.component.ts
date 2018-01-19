@@ -70,6 +70,9 @@ export class ClienteEditarComponent implements OnInit {
 
         if (!parse_email.test(Email))
             return alert("Email incorreto, ex: 'exemplo@exemplo.com.br'");
+
+        if (Nome.length < 5)
+            return alert("Nome incorreto, deve conter de 5 até 100 caracteres");
         
         let clienteAdd = {
             Id: Id == "" ? 0 : Id,
@@ -100,7 +103,7 @@ export class ClienteEditarComponent implements OnInit {
         }
         setTimeout(() => {
             alert(mensagem);
-            this.router.navigate(['/fetch-data']);
+            this.router.navigate(['/clientes']);
         }, 1000);
     }
 }

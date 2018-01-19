@@ -19,6 +19,9 @@ namespace Projeto_Lucas.Api
             service.AddTransient<IProdutoService, ProdutoService>();
             service.AddTransient<IProdutoRepository, ProdutoRepository>();
 
+            service.AddTransient<IProdutosClienteService, ProdutosClienteService>();
+            service.AddTransient<IProdutosClienteRepository, ProdutosClienteRepository>();
+
             service.AddDbContext<Projeto_LucasContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("Projeto_LucasConnectionString"), 
                     b => b.MigrationsAssembly("Projeto_Lucas.Api")));

@@ -15,6 +15,9 @@ namespace Projeto_Lucas.Infrastructure.Mapping
 
             entityBuilder.Property(x => x.Valor)
                          .IsRequired();
+
+            entityBuilder.Property(x => x.Qtde)
+                         .IsRequired();
         }
     }
 }

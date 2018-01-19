@@ -14,11 +14,13 @@ namespace Projeto_Lucas.Infrastructure
 
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<ProdutoCliente> ProdutosCliente { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             new ClienteMap(modelBuilder.Entity<Cliente>());
             new ProdutoMap(modelBuilder.Entity<Produto>());
+            new ProdutoClienteMap(modelBuilder.Entity<ProdutoCliente>());
 
             base.OnModelCreating(modelBuilder);
         }

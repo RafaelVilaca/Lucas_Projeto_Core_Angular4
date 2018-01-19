@@ -31,11 +31,11 @@ export class FetchDataComponent {
     }
 
     AddCliente() {
-        this.router.navigate(['/cliente-editar/' + '0']);
+        this.router.navigate(['/clientes/editar/' + '0']);
     }
 
     UpdateCliente(Id: number) {
-        this.router.navigate(['/cliente-editar/' + Id]);
+        this.router.navigate(['/clientes/editar/' + Id]);
     }
 
     ngGetClientes() {

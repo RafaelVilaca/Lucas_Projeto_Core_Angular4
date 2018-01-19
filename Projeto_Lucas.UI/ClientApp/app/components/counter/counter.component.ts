@@ -21,17 +21,18 @@ export class CounterComponent {
     public Titulos = "";
     public Valores = 0;
     public NovoProduto = false;
+    public Qtdes = 0;
 
     constructor(private http: Http, private route: ActivatedRoute, private router: Router) {
         this.ngGetProdutos();
     }
 
     AddProduto() {
-        this.router.navigate(['/produto-editar/' + '0']);
+        this.router.navigate(['/produtos/editar/' + '0']);
     }
 
     UpdateProduto(Id: number) {
-        this.router.navigate(['/produto-editar/' + Id]);
+        this.router.navigate(['/produtos/editar/' + Id]);
     }
 
     ngGetProdutos() {
@@ -63,5 +64,6 @@ export interface Produto {
     ativo: boolean,
     dataCadastro: Date,
     titulo: string,
-    valor: number
+    valor: number,
+    qtde: number
 }
